@@ -1,0 +1,14 @@
+### docker host
+add http_proxy to docker host
+
+### server
+docker build --build-arg https_proxy=$http_proxy -t minimal-server
+docker run --name minimal-server -p 80:5555 --rm minimal-server
+
+
+### client
+docker build --build-arg https_proxy=$http_proxy -t minimal-client .
+docker run -p 8080:80 minimal-client
+
+
+### proxy

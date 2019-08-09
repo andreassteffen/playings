@@ -1,0 +1,8 @@
+name: minimal_docker
+channels:
+- defaults
+dependencies:
+- python=3.6
+- flask
+- gunicorn
+

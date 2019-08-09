@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  client:
+    build:
+      context: client
+      args:
+        - http_proxy
+        - https_proxy
+    expose:
+      - 8080
+    ports:
+      - 8080:80
+  server:
+    build:
+      context: server
+      args:
+        - http_proxy
+        - https_proxy
+    expose:
+      - 80
+    ports:
+      - 80:5555
